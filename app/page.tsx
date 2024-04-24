@@ -14,10 +14,10 @@ import Link from "next/link";
 export const revalidate = 30; // revalidate at most every hour
 
 async function getData() {
-  const query = `*[_type == 'blog']{
+  const query = `*[_type == 'blog'] | order(_createdAt desc) {
     title,
       smallDescription,
-      "currentSlug" : slug.current, 
+      "currentSlug": slug.current,
       titleImage
   }`;
 
