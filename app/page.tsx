@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
+export const revalidate = 30; // revalidate at most every hour
 
 async function getData() {
   const query = `*[_type == 'blog']{

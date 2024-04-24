@@ -2,7 +2,7 @@ import { fullBlog } from "@/app/lib/interface";
 import { client, urlFor } from "@/app/lib/sanity";
 import { PortableText } from "next-sanity";
 import Image from "next/image";
-import { blob } from "stream/consumers";
+export const revalidate = 30; // revalidate at most every hour
 
 async function getData(slug: string) {
   const query = `*[_type == 'blog' && slug.current=="${slug}"]{
